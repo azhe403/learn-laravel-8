@@ -3,7 +3,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Blog</h1>
+    <h1 class="mb-5">Post category: {{ $category }} </h1>
 
     @foreach($posts as $post)
         <div>
@@ -15,9 +15,7 @@
                 <h5>{{ $post->author }}</h5>
                 <p>{{ $post->excerpt }}</p>
 
-                <a href="/posts">
-                    <button class="btn btn-primary">Delete</button>
-                </a>
+                <button>Delete</button>
             </article>
         </div>
 
