@@ -14,7 +14,10 @@
                     <a class="nav-link @if($title=='Blog') active @endif" href="/posts">Posts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @if($title=='About') active @endif" href="/about">About</a>
+                    <a class="nav-link @if($title=='About') active @endif" href="/about-me">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if($title=='About') active @endif" href="/about-laravel">Laravel</a>
                 </li>
             </ul>
             <form class="d-flex">
