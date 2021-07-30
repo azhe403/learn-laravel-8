@@ -24,7 +24,7 @@
                 <p>{{ $post->excerpt }}</p>
 
                 <a class="text-decoration-none" href="/posts/{{ $post->slug }}">Read more..</a>
-                <a href="/posts" class="btn btn-primary">Delete</a>
+                <a href="/posts/delete/{{ $post->slug }}" class="btn btn-primary">Delete</a>
             </article>
         </div>
 

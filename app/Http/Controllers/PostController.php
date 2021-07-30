@@ -22,4 +22,11 @@ class PostController extends Controller
             "post" => $post
         ]);
     }
+
+    public function delete(Post $post)
+    {
+        Post::where('slug', $post->slug)->delete();
+
+        return redirect('posts');
+    }
 }
