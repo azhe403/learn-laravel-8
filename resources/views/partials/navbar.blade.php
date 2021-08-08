@@ -14,6 +14,9 @@
                     <a class="nav-link @if($title=='Blog') active @endif" href="/posts">Posts</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link @if($title=='Categories') active @endif" href="/categories">Categories</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link @if($title=='About') active @endif" href="/about-me">About</a>
                 </li>
                 <li class="nav-item">
