@@ -3,7 +3,9 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +36,9 @@ Route::get('/authors/{author:username}', [AuthorController::class, 'get']);
 
 Route::get('/about-me', [AboutController::class, 'index']);
 Route::get('/about-laravel', [AboutController::class, 'laravel']);
+
+Route::get('login', [LoginController::class, 'index']);
+Route::get('register', [RegisterController::class, 'index']);
 
 //Route::get('/categories', function () {
 //    return view('categories', [
