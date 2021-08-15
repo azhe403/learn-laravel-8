@@ -37,8 +37,10 @@ Route::get('/authors/{author:username}', [AuthorController::class, 'get']);
 Route::get('/about-me', [AboutController::class, 'index']);
 Route::get('/about-laravel', [AboutController::class, 'laravel']);
 
-Route::get('login', [LoginController::class, 'index']);
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 //Route::get('/categories', function () {
 //    return view('categories', [

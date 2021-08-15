@@ -5,25 +5,52 @@
         <div class="col-lg-5">
             <main class="form-registration">
                 <h1 class="h3 mb-3 fw-normal text-center">Register form</h1>
-                <form>
+                <form action="/register" method="POST">
+                    @csrf
+
                     {{--<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">--}}
 
                     <div class="form-floating">
-                        <input type="name" class="form-control rounded-top" id="name" placeholder="Yourname">
+                        <input name="name" type="text"
+                               class="form-control rounded-top @error('name') is-invalid @enderror" id="name"
+                               placeholder="Yourname" value="{{ old('name') }}" required>
                         <label for="name">Name</label>
+                        @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="username" class="form-control" id="name" placeholder="Username">
+                        <input name="username" type="text" class="form-control @error('username') is-invalid @enderror"
+                               id="name" placeholder="Username" value="{{ old('username') }}" required>
                         <label for="username">Username</label>
+                        @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                               id="floatingInput" placeholder="name@example.com" value="{{ old('email') }}" required>
                         <label for="floatingInput">Email address</label>
+                        @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control rounded-bottom" id="floatingPassword"
-                               placeholder="Password">
+                        <input name="password" type="password"
+                               class="form-control rounded-bottom @error('password') is-invalid @enderror"
+                               id="floatingPassword" placeholder="Password" required>
                         <label for="floatingPassword">Password</label>
+                        @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
                     {{--                    <div class="checkbox mb-3">--}}
