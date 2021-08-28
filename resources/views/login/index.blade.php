@@ -11,17 +11,32 @@
                 </div>
             @endif
 
+            @if (session()->has('loginError'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('loginError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+            @endif
+
             <main class="form-signin">
                 <h1 class="h3 mb-3 fw-normal text-center">Please login</h1>
-                <form>
+                <form action="/login" method="post">
+                    @csrf
+
                     {{--<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">--}}
 
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="text" name="username" class="form-control"
+                               id="username" placeholder="Username"
+                               autofocus
+                               required>
+                        <label for="username">Username</label>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" name="password" class="form-control" id="floatingPassword"
+                               placeholder="Password"
+                               required>
                         <label for="floatingPassword">Password</label>
                     </div>
 
